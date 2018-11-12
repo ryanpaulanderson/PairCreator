@@ -1,6 +1,7 @@
 import csv
 from copy import deepcopy
 from collections import deque
+from random import shuffle
 
 class Pairings():
     def __init__(self):
@@ -9,6 +10,7 @@ class Pairings():
         self.names = []
         self.get_pairs()
         self.get_names()
+        shuffle(self.names) # trying to do the same order each time will iteratively slow the depth first search
         self.used = set()
         self.n = len(self.names)
 
